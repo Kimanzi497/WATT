@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATTMASTER company</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .top-bar {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .search-bar {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .logo-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .logo-section img {
+            width: 200px;
+            height: auto;
+        }
+        .logo-section p {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+        .welcome-section {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home1.jpg') no-repeat center center/cover;
+            color: #ecf0f1;
+        }
+        .welcome-section h2 {
+            font-size: 36px;
+        }
+        .welcome-section p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .services-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .service-item {
+            flex: 1 1 200px;
+            margin: 10px;
+            text-align: center;
+        }
+        .service-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        .service-item h3 {
+            color: #2c3e50;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div>
+            <a href="tel:+254743093566"><img src="call.png" alt="Call Icon" width="20px"></a>
+            <span>+254743093566</span>
+        </div>
+        <div>
+             <a href="wattmasterAI.html">WT LTD AI</a> |
+            <a href="about.html">About Us</a> |
+            <a href="contact.html">Contact Us</a> |
+            <a href="services.html">Our Services</a> |
+            <a href="caree.html">Careers</a> |
+            <a href="mailto:petermusee497@gmail.com">Staff Email</a>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for links...">
+        <button onclick="searchLinks()">Search</button>
+    </div>
+
+    <div class="logo-section">
+        <img src="wlogo.png" alt="Company Logo">
+        <p>WATTMASTER COMPANY</p>
+    </div>
+
+    <div class="welcome-section">
+        <h2>Welcome to Our Website!</h2>
+        <p>We are excited to have you here. Explore our services and products to discover what we can offer you.</p>
+    </div>
+
+    <div class="services-section">
+        <div class="service-item">
+            <img src="home1.jpg" alt="Service 1">
+            <h3>Live Network Maintenance</h3>
+        </div>
+        <div class="service-item">
+            <img src="home2.jpg" alt="Service 2">
+            <h3>Electric Device Repair</h3>
+        </div>
+        <div class="service-item">
+            <img src="home3.jpg" alt="Service 3">
+            <h3>Device Sales</h3>
+        </div>
+        <div class="service-item">
+            <img src="home4.jpg" alt="Service 4">
+            <h3>Customer Support</h3>
+        </div>
+        <div class="service-item">
+            <img src="home5.jpg" alt="Service 5">
+            <h3>Network Installation</h3>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="index.HTML">Home</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="caree.html">Careers</a> |
+        <img src="wlogo.png" alt="Watt Logo" width="50px">
+    </div>
+
+    <script>
+        function searchLinks() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    link.style.backgroundColor = 'yellow';
+                } else {
+                    link.style.backgroundColor = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

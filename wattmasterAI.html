@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATTMASTER TECHNOLOGIES LIMITED CHAT</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .chat-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: red;
+            text-align: CENTER;
+            position: relative;
+            TOP:290PX;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 800px 100PX ;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            margin: 0 10px;
+        }
+
+        #chat-box {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 40px ;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: skyblue;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted>
+        <source src="gpt.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="header">
+          <a href="index.html"><b>Home</b></a> 
+        
+    </div>
+
+    <div class="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="ask something related to wattmaster..." onkeydown="handleInput(event)">
+    </div>
+
+    <div class="footer">
+        <p>The WATTMASTER LTD can make mistakes, consider looking for necessary info.</p>
+       
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

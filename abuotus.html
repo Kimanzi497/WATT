@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        .about-section {
+            padding: 20px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-section img {
+            width: 100px;
+            height: auto;
+        }
+
+        .logo-section h1 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .content-section {
+            text-align: center;
+        }
+
+        .background-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#goals">Goals</a></li>
+        </ul>
+    </nav>
+    <div class="about-section">
+        <div class="logo-section">
+            <img src="wlogo.png" alt="Logo">
+            <h1>WATTMASTER</h1>
+        </div>
+        <div class="content-section">
+            <img src="background.png" alt="Background Image" class="background-image">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+
+            links.forEach(link => {
+                link.addEventListener('mouseover', function () {
+                    this.style.backgroundColor = '#444';
+                });
+
+                link.addEventListener('mouseout', function () {
+                    this.style.backgroundColor = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

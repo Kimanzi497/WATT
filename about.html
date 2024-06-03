@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        .about-section {
+            padding: 20px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-section img {
+            width: 100px;
+            height: auto;
+        }
+
+        .logo-section h1 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .content-section {
+            text-align: center;
+        }
+
+        .background-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-image: url('about6.jpg');
+            background-size: contain;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer img {
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            display: block;
+            color: white;
+            margin: 5px 0;
+            text-decoration: italics;
+            text-color:green;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: auto;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="GOALS.html">Goals</a></li>
+            <li><a href="chat.html">Chat</a></li>
+        </ul>
+    </nav>
+    <div class="about-section">
+        <div class="logo-section">
+            <img src="wlogo.png" alt="Logo">
+            <h1>WATTMASTER LTD</h1>
+        </div>
+        <div class="welcome-message">
+            <p>Welcome to WATTMASTER LTD! We are dedicated to providing top-notch services in live network maintenance and electrical device repair. Explore our gallery to see some of the places our technicians have worked.</p>
+        </div><div class="footer">
+      <img src="about.png" alt="Background Image" class="background-image">
+        <div class="content-section">
+            <img src="about.png" alt="Background Image" class="background-image">
+        </div></div>
+        <div> <p style="color: green;"> electronic components we install </p>
+   </div>
+        <div class="gallery">
+          
+            <img src="about1.jpeg" alt="Workplace 1">
+              
+            <img src="about2.jpeg" alt="Workplace 2">
+            <img src="about3.jpeg" alt="Workplace 3">
+            <img src="about4.jpeg" alt="Workplace 4">
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="wlogo.png" alt="WATTMASTER Logo">
+        <a href="WATTMASTERHOME.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="#top">About</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/WATTMASTER" target="_blank"><img src="fb.jpg" alt="Facebook"></a>
+            <img src="inst.jpg" alt="Instagram">
+        </div>
+        <p>© 2024 WATTMASTER LTD. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+
+            links.forEach(link => {
+                link.addEventListener('mouseover', function () {
+                    this.style.backgroundColor = '#444';
+                });
+
+                link.addEventListener('mouseout', function () {
+                    this.style.backgroundColor = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
