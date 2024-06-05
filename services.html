@@ -13,6 +13,22 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+.top-bar {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
 
         .video-bg {
             position: fixed;
@@ -23,22 +39,40 @@
             z-index: -1;
             object-fit: cover;
         }
-.footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+
+       .footer {
+            background-image: url('about6.jpg');
+            background-size: contain;
             padding: 20px;
             text-align: center;
-}
+            color: white;
+        }
+
+        .footer img {
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            display: block;
+            color: white;
+            margin: 5px 0;
+            text-decoration: italics;
+            text-color:green;
+        }
+  
+
         .welcome-section {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            background: rgba(0, 0, 0, 0.5); /* Optional: To make text more readable */
+            color: red;
+            background-image: url('biglogo.jpg');
         }
 
         .welcome-text {
@@ -51,67 +85,170 @@
             background-color: #fff;
         }
 
-        .service {
-            text-align: center;
+        .services-pair {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 50px;
         }
 
-        .service img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .service {
+            position: relative;
+            width: 50%;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            transition: all 2.0s ease;
+            cursor: pointer;
+            text-align: center;
         }
 
-        .service h2 {
-            font-size: 24px;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        .service p {
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 18px;
-            color: #666;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 200%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 2.0s ease;
+        }
+
+       .overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+        .overlay .read-more {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .service:hover .text {
+            left: -100%;
+        }
+
+        .service:hover .overlay {
+            left: 0;
+        }
+
+        .divider {
+            width: 2px;
+            height: 100%;
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
+<div class="top-bar">
+        <div>
+            <a href="tel:+254743093566"><img src="call.png" alt="Call Icon" width="20px"></a>
+            <span>+254743093566</span>
+        </div>
+        <div>
+             <a href="index.html"> home <a> |
+             <a href="wattmasterAI.html">WT LTD AI</a> |
+            <a href="about.html">About Us</a> |
+            <a href="contact.html">Contact Us</a> |
+            <a href="services.html">Our Services</a> |
+            <a href="caree.html">Careers</a> |
+            <a href="mailto:petermusee497@gmail.com">Staff Email</a>
+        </div>
+    </div>
     <video class="video-bg" autoplay muted loop>
-        <source src="power.mp4" type="video/mp4">
+        <source src="GPT.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="welcome-section">
         <div class="welcome-text">
-            <h1>Welcome to WattMaster Services</h1>
-            <p>We provide the best network and electricity solutions</p>
+            <h1><i>WATTMASTER TECHNOLOGIES LTD <i></h1>
+            <p>our services </p>
         </div>
     </div>
     <div class="services-section">
-        <div class="service">
-            <img src="service1.jpg" alt="Service 1">
-            <h2>Network Installation</h2>
-            <p>Professional network setup and maintenance.</p>
+        <div class="services-pair">
+            <div class="service">
+                <div class="text">Network Installations</div>
+                <div class="overlay">
+                    <img src="service1.jpg" alt="Service 1">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="service">
+                <div class="text">Electricity Device Sales</div>
+                <div class="overlay">
+                    <img src="home2.jpg" alt="Service 2">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
         </div>
-        <div class="service">
-            <img src="home2.jpg" alt="Service 2">
-            <h2>Electricity Device Sales</h2>
-            <p>High-quality electricity devices available for purchase.</p>
+        <div class="services-pair">
+            <div class="service">
+                <div class="text">Live Network  Support</div>
+                <div class="overlay">
+                    <img src="evwatt.jpg" alt="Service 3">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="service">
+                <div class="text">Consultation and Support</div>
+                <div class="overlay">
+                    <img src="evwatt3.jpg" alt="Service 4">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
         </div>
-        <div class="service">
-            <img src="evwatt.jpg" alt="Service 3">
-            <h2>live network support</h2>
-            <p>Expert repair and maintenance services.</p>
+        <div class="services-pair">
+            <div class="service">
+                <div class="text">solar power installation</div>
+                <div class="overlay">
+                    <img src="service5.jpeg" alt="Service 5">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="service">
+                <div class="text">electronic digital circuits</div>
+                <div class="overlay">
+                    <img src="service6.jpeg" alt="Service 6">
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
         </div>
-        <div class="service">
-            <img src="evwatt3.jpg" alt="Service 4">
-            <h2>Consultation and Support</h2>
-            <p>Professional advice and support for all your needs.</p>
+    </div>
+   <div class="footer">
+        <img src="wlogo.png" alt="WATTMASTER Logo">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/WATTMASTER" target="_blank"><img src="fb.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/_wattmaster"><img src="inst.jpg" alt="Instagram"></a>
         </div>
-<div class="footer">
-        <a href="index.HTML">Home</a> |
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="caree.html">Careers</a> |
-        <img src="wlogo.png" alt="Watt Logo" width="50px">
+        <p>© 2024 WATTMASTER LTD. All rights reserved.</p>
     </div>
     </div>
 </body>
 </html>
+          
+           
+       
+     
