@@ -1,6 +1,5 @@
 
-            
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -136,15 +135,16 @@
 <body>
     <div class="header">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
     </div>
 
     <div class="main">
         <div class="sidebar">
-            <a href="contact.html">Link 1</a>
-            <a href="about.html">Link 2</a>
-            <a href="service.html">Link 3</a>
+            <button onclick="playAudio()">robot can play some background</button>
+            <a href="contact.html">contact</a>
+            <a href="about.html">about us</a>
+            <a href="service.html">our services</a>
         </div>
         <div class="content">
             <video class="video-background" autoplay loop muted>
@@ -162,7 +162,15 @@
     <div class="footer">
         <p>The WATTMASTER LTD can make mistakes, consider looking for necessary info.</p>
     </div>
+<audio id="background-audio" src="handel.m4a" loop></audio>
 
+  
+    <script>
+    function playAudio() {
+      var audio = document.getElementById('background-audio');
+      audio.play();
+    }
+  </script>
     <script src="script.js"></script>
 </body>
 </html>
