@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+          <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,32 +17,6 @@
             height: 100vh;
             overflow: hidden;
         }
-          .footer {
-            background-image: url('about6.jpg');
-            background-size: contain;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .footer img {
-            width: 50px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .footer a {
-            display: block;
-            color: white;
-            margin: 5px 0;
-            text-decoration: italics;
-            text-color:green;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
 
         .video-bg {
             position: fixed;
@@ -183,60 +158,11 @@
         <div id="chat-box"></div>
         <input type="text" id="user-input" placeholder="Enter your message...">
         <button id="send-button">Send</button>
-    </div> 
- <div class="footer">
-        <img src="wlogo.png" alt="WATTMASTER Logo">
-        <a href="WATTMASTERHOME.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="#top">About</a>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/WATTMASTER" target="_blank"><img src="fb.jpg" alt="Facebook"></a>
-            <img src="inst.jpg" alt="Instagram">
-        </div>
-        <p>© 2024 WATTMASTER LTD. All rights reserved.</p>
     </div>
 
     <script>
-        // Save users to LocalStorage
-        function saveUsers(users) {
-            localStorage.setItem('users', JSON.stringify(users));
-        }
-
-        // Load users from LocalStorage
-        function loadUsers() {
-            return JSON.parse(localStorage.getItem('users')) || {};
-        }
-
-        // Save chat messages to LocalStorage
-        function saveChats(chats) {
-            localStorage.setItem('chats', JSON.stringify(chats));
-        }
-
-        // Load chat messages from LocalStorage
-        function loadChats() {
-            return JSON.parse(localStorage.getItem('chats')) || [];
-        }
-
-        // Render chats in the chat box
-        function renderChats(chats) {
-            const chatBox = document.getElementById('chat-box');
-            chatBox.innerHTML = '';
-            chats.forEach(chat => {
-                const message = document.createElement('div');
-                message.textContent = `${chat.username}: ${chat.message}`;
-                message.style.marginBottom = '10px';
-                message.style.border = '1px solid #ddd';
-                message.style.padding = '10px';
-                message.style.borderRadius = '5px';
-                message.style.backgroundColor = '#e0e0e0';
-                chatBox.appendChild(message);
-            });
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        let users = loadUsers();
+        let users = {}; // Simple in-memory store for users
         let currentUser = null;
-        let chats = loadChats();
 
         function showRegisterForm() {
             document.getElementById('login-form').style.display = 'none';
@@ -255,7 +181,6 @@
             if (username && password) {
                 if (!users[username]) {
                     users[username] = password;
-                    saveUsers(users);
                     alert('Registration successful! Please login.');
                     showLoginForm();
                 } else {
@@ -275,7 +200,6 @@
                 document.getElementById('login-form').style.display = 'none';
                 document.getElementById('register-form').style.display = 'none';
                 document.getElementById('chat-container').style.display = 'block';
-                renderChats(chats);
                 document.getElementById('chat-box').innerHTML += `<div>Welcome, ${currentUser}!</div>`;
             } else {
                 alert('Invalid username or password.');
@@ -284,12 +208,20 @@
 
         document.getElementById('send-button').addEventListener('click', function () {
             const userInput = document.getElementById('user-input');
+            const chatBox = document.getElementById('chat-box');
+
             if (userInput.value.trim() !== "") {
-                const chatMessage = { username: currentUser, message: userInput.value };
-                chats.push(chatMessage);
-                saveChats(chats);
-                renderChats(chats);
+                const userMessage = document.createElement('div');
+                userMessage.textContent = `${currentUser}: ${userInput.value}`;
+                userMessage.style.marginBottom = '10px';
+                userMessage.style.border = '1px solid #ddd';
+                userMessage.style.padding = '10px';
+                userMessage.style.borderRadius = '5px';
+                userMessage.style.backgroundColor = '#e0e0e0';
+
+                chatBox.appendChild(userMessage);
                 userInput.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
             }
         });
 
@@ -298,16 +230,28 @@
                 document.getElementById('send-button').click();
             }
         });
+
+        function fetchMessages() {
+            fetch('messages.json')
+                .then(response => response.json())
+                .then(data => {
+                    const chatBox = document.getElementById('chat-box');
+                    chatBox.innerHTML = '';
+                    data.forEach(msg => {
+                        const userMessage = document.createElement('div');
+                        userMessage.textContent = `${msg.user}: ${msg.message}`;
+                        chatBox.appendChild(userMessage);
+                    });
+                });
+        }
+
+        setInterval(fetchMessages, 3000); // Fetch messages every 3 seconds
+        fetchMessages();
+   
     </script>
 </body>
 </html>
 
-           
-       
-        
-         
-          
-         
    
       
        
