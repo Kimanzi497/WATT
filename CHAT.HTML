@@ -1,5 +1,4 @@
-
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -211,49 +210,25 @@
             const chatBox = document.getElementById('chat-box');
 
             if (userInput.value.trim() !== "") {
-                const userMessage = document.createElement('div');
-                userMessage.textContent = `${currentUser}: ${userInput.value}`;
-                userMessage.style.marginBottom = '10px';
-                userMessage.style.border = '1px solid #ddd';
-                userMessage.style.padding = '10px';
-                userMessage.style.borderRadius = '5px';
-                userMessage.style.backgroundColor = '#e0e0e0';
-
-                chatBox.appendChild(userMessage);
+                chatBox.innerHTML += `<div>${currentUser}: ${userInput.value}</div>`;
                 userInput.value = "";
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
         });
-
-        document.getElementById('user-input').addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') {
-                document.getElementById('send-button').click();
-            }
-        });
-
-        function fetchMessages() {
-            fetch('messages.json')
-                .then(response => response.json())
-                .then(data => {
-                    const chatBox = document.getElementById('chat-box');
-                    chatBox.innerHTML = '';
-                    data.forEach(msg => {
-                        const userMessage = document.createElement('div');
-                        userMessage.textContent = `${msg.user}: ${msg.message}`;
-                        chatBox.appendChild(userMessage);
-                    });
-                });
-        }
-
-        setInterval(fetchMessages, 3000); // Fetch messages every 3 seconds
-        fetchMessages();
-   
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/668d01357a36f5aaec9633d1/1i2bcpf19';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
-
-   
-      
-       
-          
- 
